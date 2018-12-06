@@ -14,7 +14,7 @@ import javax.swing.border.LineBorder;
 /**
  * Calculadora apariencia de Windows
  * 
- * @author Gabriel González
+ * @author Gabriel GonzÃ¡lez
  * @version 1.0
  * @contacto gabrielgonzalez1802@gmail.com
  */
@@ -107,6 +107,7 @@ public class Calculadora extends JFrame implements MouseListener, KeyListener, M
 				try {
 					Calculadora frame = new Calculadora();
 					frame.setVisible(true);
+					frame.setFocusable(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -412,7 +413,7 @@ public class Calculadora extends JFrame implements MouseListener, KeyListener, M
 			validarLongitud(500);
 		}
 
-		// NÚMERO 1
+		// NÃšMERO 1
 		if (e.getSource() == btn1) {
 			if (bloqueo == false) {
 				numero(true);
@@ -433,7 +434,7 @@ public class Calculadora extends JFrame implements MouseListener, KeyListener, M
 			}
 		}
 
-		// NÚMERO 2
+		// NÃšMERO 2
 		if (e.getSource() == btn2) {
 			if (bloqueo == false) {
 				numero(true);
@@ -454,7 +455,7 @@ public class Calculadora extends JFrame implements MouseListener, KeyListener, M
 			}
 		}
 
-		// NÚMERO 3
+		// NÃšMERO 3
 		if (e.getSource() == btn3) {
 			if (bloqueo == false) {
 				numero(true);
@@ -475,7 +476,7 @@ public class Calculadora extends JFrame implements MouseListener, KeyListener, M
 			}
 		}
 
-		// NÚMERO 4
+		// NÃšMERO 4
 		if (e.getSource() == btn4) {
 			if (bloqueo == false) {
 				numero(true);
@@ -496,7 +497,7 @@ public class Calculadora extends JFrame implements MouseListener, KeyListener, M
 			}
 		}
 
-		// NÚMERO 5
+		// NÃšMERO 5
 		if (e.getSource() == btn5) {
 			if (bloqueo == false) {
 				numero(true);
@@ -517,7 +518,7 @@ public class Calculadora extends JFrame implements MouseListener, KeyListener, M
 			}
 		}
 
-		// NÚMERO 6
+		// NÃšMERO 6
 		if (e.getSource() == btn6) {
 			if (bloqueo == false) {
 				numero(true);
@@ -538,7 +539,7 @@ public class Calculadora extends JFrame implements MouseListener, KeyListener, M
 			}
 		}
 
-		// NÚMERO 7
+		// NÃšMERO 7
 		if (e.getSource() == btn7) {
 			if (bloqueo == false) {
 				numero(true);
@@ -559,7 +560,7 @@ public class Calculadora extends JFrame implements MouseListener, KeyListener, M
 			}
 		}
 
-		// NÚMERO 8
+		// NÃšMERO 8
 		if (e.getSource() == btn8) {
 			if (bloqueo == false) {
 				numero(true);
@@ -580,7 +581,7 @@ public class Calculadora extends JFrame implements MouseListener, KeyListener, M
 			}
 		}
 
-		// NÚMERO 9
+		// NÃšMERO 9
 		if (e.getSource() == btn9) {
 			if (bloqueo == false) {
 				numero(true);
@@ -601,7 +602,7 @@ public class Calculadora extends JFrame implements MouseListener, KeyListener, M
 			}
 		}
 
-		// NÚMERO 0
+		// NÃšMERO 0
 		if (e.getSource() == btn0) {
 			if (bloqueo == false) {
 				numero(true);
@@ -1321,14 +1322,14 @@ public class Calculadora extends JFrame implements MouseListener, KeyListener, M
 
 		if (e.getSource() == rdbtnCientfica) {
 			if (rdbtnCientfica.isSelected()) {
-				System.out.println("Modo Científico");
+				System.out.println("Modo CientÃ­fico");
 			}
 		}
 
 	}
 
 	/**
-	 * Método encargado de Sumar los valores almacenados en oldTemp + newTemp
+	 * MÃ©todo encargado de Sumar los valores almacenados en oldTemp + newTemp
 	 * 
 	 * @param oldTemp
 	 * @param newTemp
@@ -1360,7 +1361,7 @@ public class Calculadora extends JFrame implements MouseListener, KeyListener, M
 	}
 
 	/**
-	 * Método encargado de Restar los valores almacenados en oldTemp - newTemp
+	 * MÃ©todo encargado de Restar los valores almacenados en oldTemp - newTemp
 	 * 
 	 * @param oldTemp
 	 * @param newTemp
@@ -1394,7 +1395,7 @@ public class Calculadora extends JFrame implements MouseListener, KeyListener, M
 	}
 
 	/**
-	 * Método encargado de multiplicar los valores almacenados en oldTemp * newTemp
+	 * MÃ©todo encargado de multiplicar los valores almacenados en oldTemp * newTemp
 	 * 
 	 * @param oldTemp
 	 * @param newTemp
@@ -1430,7 +1431,7 @@ public class Calculadora extends JFrame implements MouseListener, KeyListener, M
 	}
 
 	/**
-	 * Método encargado de dividir los valores almacenados en oldTemp / newTemp
+	 * MÃ©todo encargado de dividir los valores almacenados en oldTemp / newTemp
 	 * 
 	 * @param oldTemp
 	 * @param newTemp
@@ -1516,7 +1517,7 @@ public class Calculadora extends JFrame implements MouseListener, KeyListener, M
 	}
 
 	/**
-	 * Método encargado de concatenar un string
+	 * MÃ©todo encargado de concatenar un string
 	 * 
 	 * @param dato valor a concatenar
 	 * @return newValue el nuevo valor
@@ -1539,9 +1540,10 @@ public class Calculadora extends JFrame implements MouseListener, KeyListener, M
 	}
 
 	/*
-	 * Método Encargado de limpiar la pantalla completa
+	 * MÃ©todo Encargado de limpiar la pantalla completa
 	 */
 	public void limpiarC() {
+		isDecimal = false;
 		tfPantalla.setFont(standar);
 		tfPantalla.setText("0");
 		tfTemp.setText("");
@@ -1566,7 +1568,7 @@ public class Calculadora extends JFrame implements MouseListener, KeyListener, M
 	}
 
 	/*
-	 * Método Encargado de limpiar la parte que se tipea de la pantalla
+	 * MÃ©todo Encargado de limpiar la parte que se tipea de la pantalla
 	 */
 	public void limpiarCE() {
 		tfPantalla.setFont(standar);
@@ -1584,6 +1586,7 @@ public class Calculadora extends JFrame implements MouseListener, KeyListener, M
 			bloqueo = false;
 			reciproco = false;
 			raiz = false;
+			isDecimal = false;
 		} else {
 			tfPantalla.setText("0");
 			oldTemp = "";
@@ -1596,6 +1599,7 @@ public class Calculadora extends JFrame implements MouseListener, KeyListener, M
 			bloqueo = false;
 			reciproco = false;
 			raiz = false;
+			isDecimal = false;
 		}
 	}
 
@@ -1616,7 +1620,7 @@ public class Calculadora extends JFrame implements MouseListener, KeyListener, M
 	}
 
 	/**
-	 * Setea el valor de la pantalla con el número previo
+	 * Setea el valor de la pantalla con el nÃºmero previo
 	 */
 	public void regresaNumero() {
 		if (numero == true) {
@@ -1647,10 +1651,10 @@ public class Calculadora extends JFrame implements MouseListener, KeyListener, M
 	}
 
 	/**
-	 * Devuelve el reciproco de un número
+	 * Devuelve el reciproco de un nÃºmero
 	 * 
-	 * @param valor Número a calcular el recíproco
-	 * @return msjError, Reciproco del número
+	 * @param valor NÃºmero a calcular el recÃ­proco
+	 * @return msjError, Reciproco del nÃºmero
 	 */
 	public String reciproco(String valor) {
 		if (valor.equals("") || valor.equals("0")) {
@@ -1674,9 +1678,9 @@ public class Calculadora extends JFrame implements MouseListener, KeyListener, M
 	}
 	
 	/**
-	 * Devuelve la raiz de un número
-	 * @param valor número a calcular su raiz
-	 * @return newValor raiz del número
+	 * Devuelve la raiz de un nÃºmero
+	 * @param valor nÃºmero a calcular su raiz
+	 * @return newValor raiz del nÃºmero
 	 */
 	public String raiz(String valor) {
 		double n1;
@@ -1701,10 +1705,10 @@ public class Calculadora extends JFrame implements MouseListener, KeyListener, M
 	}
 	
 	/**
-	 * Calcula el valor porcentual de un número
+	 * Calcula el valor porcentual de un nÃºmero
 	 * @param vSolicitado valor a calcular el porcentaje
 	 * @param vPorcentual valor porcentual a calcular
-	 * @return porcentaje del número
+	 * @return porcentaje del nÃºmero
 	 */
 	public String porcentaje(String vSolicitado, String vPorcentual){
 		double porcentaje = 0;
@@ -1729,15 +1733,17 @@ public class Calculadora extends JFrame implements MouseListener, KeyListener, M
 	 * Agrega la coma decimal al valor que este en la pantalla
 	 */
 	public void decimal() {
-		isDecimal = true;
-		String num = tfPantalla.getText();
-		num= num + ",";
-		newValue=num;
-		tfPantalla.setText(num);
+		if(!isDecimal) {
+			isDecimal = true;
+			String num = tfPantalla.getText();
+			num= num + ",";
+			newValue=num;
+			tfPantalla.setText(num);
+		}
 	}
 	
 	/**
-	 * Almacena en memoria el número mostrado. 
+	 * Almacena en memoria el nÃºmero mostrado. 
 	 */
 	public void mStorage(String dato) {
 		memory = dato.replace(',', '.');
@@ -1745,7 +1751,7 @@ public class Calculadora extends JFrame implements MouseListener, KeyListener, M
 	}
 	
 	/**
-	 * Recupera el número almacenado en memoria. El número permanece en memoria. 
+	 * Recupera el nÃºmero almacenado en memoria. El nÃºmero permanece en memoria. 
 	 */
 	public void mRecall() {
 		if(!oldValue.equals(memory)) {
@@ -1765,7 +1771,7 @@ public class Calculadora extends JFrame implements MouseListener, KeyListener, M
 	}
 	
 	/**
-	 * Suma el número mostrado a otro número que se encuentre en memoria pero no muestra la suma de estos números.
+	 * Suma el nÃºmero mostrado a otro nÃºmero que se encuentre en memoria pero no muestra la suma de estos nÃºmeros.
 	 */
 	public void mMas(String numero) {
 		double n = Double.parseDouble(numero);
@@ -1775,7 +1781,7 @@ public class Calculadora extends JFrame implements MouseListener, KeyListener, M
 	}
 	
 	/**
-	 * Resta el número mostrado a otro número que se encuentre en memoria pero no muestra la resta de estos números. 
+	 * Resta el nÃºmero mostrado a otro nÃºmero que se encuentre en memoria pero no muestra la resta de estos nÃºmeros. 
 	 */
 	public void mMenos(String numero) {
 		double n = Double.parseDouble(numero);
@@ -1785,7 +1791,7 @@ public class Calculadora extends JFrame implements MouseListener, KeyListener, M
 	}
 	
 	/**
-	 * Elimina cualquier número almacenado en memoria.
+	 * Elimina cualquier nÃºmero almacenado en memoria.
 	 */
 	public void mClear() {
 		memory = "";
@@ -1793,7 +1799,7 @@ public class Calculadora extends JFrame implements MouseListener, KeyListener, M
 	}
 	
 	/**
-	 * Verifica el tamaño que tendra la pantalla
+	 * Verifica el tamaÃ±o que tendra la pantalla
 	 */
 	public void validarLongitud(int longitud) {
 		if (longitud > 15) {
@@ -1804,9 +1810,9 @@ public class Calculadora extends JFrame implements MouseListener, KeyListener, M
 	}
 
 	public void agregarKeyListener() {
-		btn1.addKeyListener(this);
+		addKeyListener(this);
 	}
-
+	
 	@Override
 	public void mouseDragged(MouseEvent e) {
 		// TODO Auto-generated method stub
@@ -1838,12 +1844,12 @@ public class Calculadora extends JFrame implements MouseListener, KeyListener, M
 
 	@Override
 	public void keyReleased(KeyEvent e) {
-		System.out.println("Soltó una tecla");
+		System.out.println("SoltÃ³ una tecla");
 	}
 
 	@Override
 	public void keyTyped(KeyEvent e) {
-		System.out.println("Escribió una tecla");
+		System.out.println("EscribiÃ³ una tecla");
 
 	}
 
